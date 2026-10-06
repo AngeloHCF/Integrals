@@ -3,8 +3,27 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ocgx2}
 
-\setlist[enumerate]{itemsep=0.8em}
+\definecolor{questionblue}{RGB}{0,82,155}
+\definecolor{answerteal}{RGB}{0,110,100}
+\definecolor{hintgray}{RGB}{95,95,95}
+
+\setlist[enumerate]{itemsep=0.9em}
+
+% Clicking the question toggles the initially hidden answer layer.
+\newcommand{\question}[3]{%
+    \item
+    \switchocg{#1}{%
+        \textcolor{questionblue}{\(\displaystyle #2\)}%
+        \;\textcolor{hintgray}{\scriptsize[show/hide answer]}%
+    }%
+    \begin{ocg}{Answer #1}{#1}{0}%
+        \quad\textcolor{answerteal}{\(\displaystyle #3 + C\)}%
+    \end{ocg}%
+}
 
 \title{Integration Techniques: 100 Practice Problems}
 \author{}
@@ -14,109 +33,110 @@
 \maketitle
 
 \noindent Evaluate each indefinite integral. Include the constant of integration
-$C$ in every answer.
+\(C\) in every answer. Click a blue integral to show its answer; click it again
+to hide the answer.
 
 \begin{enumerate}
-    \item $\displaystyle \int 2x(x^2+3)^5\,dx$
-    \item $\displaystyle \int \frac{dx}{\sqrt{9-x^2}}$
-    \item $\displaystyle \int x e^x\,dx$
-    \item $\displaystyle \int \sin^3 x\cos^2 x\,dx$
-    \item $\displaystyle \int \frac{3x^2}{x^3+4}\,dx$
-    \item $\displaystyle \int \sqrt{16-x^2}\,dx$
-    \item $\displaystyle \int x\cos x\,dx$
-    \item $\displaystyle \int \sin^2 x\cos^2 x\,dx$
-    \item $\displaystyle \int e^{5x-1}\,dx$
-    \item $\displaystyle \int \frac{x^2}{\sqrt{25-x^2}}\,dx$
-    \item $\displaystyle \int x\ln x\,dx$
-    \item $\displaystyle \int \cos^5 x\,dx$
-    \item $\displaystyle \int x\sqrt{x^2+9}\,dx$
-    \item $\displaystyle \int \frac{dx}{(x^2+4)^{3/2}}$
-    \item $\displaystyle \int x^2 e^x\,dx$
-    \item $\displaystyle \int \sin^4 x\,dx$
-    \item $\displaystyle \int \cos(4x+2)\,dx$
-    \item $\displaystyle \int \sqrt{x^2+9}\,dx$
-    \item $\displaystyle \int e^x\sin x\,dx$
-    \item $\displaystyle \int \tan^3 x\sec^2 x\,dx$
-    \item $\displaystyle \int \frac{(\ln x)^3}{x}\,dx$
-    \item $\displaystyle \int \frac{x^2}{\sqrt{x^2+16}}\,dx$
-    \item $\displaystyle \int \arctan x\,dx$
-    \item $\displaystyle \int \sec^4 x\tan x\,dx$
-    \item $\displaystyle \int \frac{x}{(x^2+1)^2}\,dx$
-    \item $\displaystyle \int \frac{dx}{x^2\sqrt{x^2-1}}$
-    \item $\displaystyle \int x\arctan x\,dx$
-    \item $\displaystyle \int \tan^2 x\sec^4 x\,dx$
-    \item $\displaystyle \int \sin x\, e^{\cos x}\,dx$
-    \item $\displaystyle \int \frac{\sqrt{x^2-4}}{x}\,dx$
-    \item $\displaystyle \int x^2\ln x\,dx$
-    \item $\displaystyle \int \sec^3 x\,dx$
-    \item $\displaystyle \int \frac{1}{\sqrt{7-2x}}\,dx$
-    \item $\displaystyle \int \frac{dx}{\sqrt{x^2-25}}$
-    \item $\displaystyle \int e^{2x}\cos x\,dx$
-    \item $\displaystyle \int \csc^3 x\,dx$
-    \item $\displaystyle \int (6x-1)\sqrt{3x^2-x+2}\,dx$
-    \item $\displaystyle \int \frac{x^2}{(x^2+9)^{3/2}}\,dx$
-    \item $\displaystyle \int \ln(1+x)\,dx$
-    \item $\displaystyle \int \sin(3x)\cos(5x)\,dx$
-    \item $\displaystyle \int \frac{e^{\sqrt{x}}}{\sqrt{x}}\,dx$
-    \item $\displaystyle \int \frac{dx}{x^2\sqrt{16-x^2}}$
-    \item $\displaystyle \int x\sin(2x)\,dx$
-    \item $\displaystyle \int \cos^2(2x)\,dx$
-    \item $\displaystyle \int \frac{\sec^2 x}{(1+\tan x)^3}\,dx$
-    \item $\displaystyle \int \frac{\sqrt{9-x^2}}{x^2}\,dx$
-    \item $\displaystyle \int x^3\cos x\,dx$
-    \item $\displaystyle \int \sin^2(4x)\,dx$
-    \item $\displaystyle \int \frac{x^3}{x^4+5}\,dx$
-    \item $\displaystyle \int \frac{dx}{(x^2+1)^{3/2}}$
-    \item $\displaystyle \int x^2\sin x\,dx$
-    \item $\displaystyle \int \sin^3 x\,dx$
-    \item $\displaystyle \int \frac{\cos x}{\sqrt{1+\sin x}}\,dx$
-    \item $\displaystyle \int \frac{x^2}{\sqrt{x^2-9}}\,dx$
-    \item $\displaystyle \int \ln x\,dx$
-    \item $\displaystyle \int \cos^3 x\,dx$
-    \item $\displaystyle \int \frac{1}{x\sqrt{\ln x}}\,dx$
-    \item $\displaystyle \int \frac{\sqrt{x^2+4}}{x^2}\,dx$
-    \item $\displaystyle \int x e^{3x}\,dx$
-    \item $\displaystyle \int \tan^4 x\,dx$
-    \item $\displaystyle \int (2x+1)e^{x^2+x}\,dx$
-    \item $\displaystyle \int \frac{dx}{x\sqrt{x^2+9}}$
-    \item $\displaystyle \int x\ln(2x)\,dx$
-    \item $\displaystyle \int \sec^2 x\tan^3 x\,dx$
-    \item $\displaystyle \int \frac{\ln(2x)}{x}\,dx$
-    \item $\displaystyle \int \frac{dx}{(25-x^2)^{3/2}}$
-    \item $\displaystyle \int e^x\cos(2x)\,dx$
-    \item $\displaystyle \int \sin^2 x\cos^4 x\,dx$
-    \item $\displaystyle \int \frac{x^2}{(x^3-2)^4}\,dx$
-    \item $\displaystyle \int \frac{x^2}{(x^2-4)^{3/2}}\,dx$
-    \item $\displaystyle \int x^2 e^{2x}\,dx$
-    \item $\displaystyle \int \sin(2x)\sin(7x)\,dx$
-    \item $\displaystyle \int \frac{\sin(3x)}{2+\cos(3x)}\,dx$
-    \item $\displaystyle \int \sqrt{x^2-16}\,dx$
-    \item $\displaystyle \int x\arcsin x\,dx$
-    \item $\displaystyle \int \cos(3x)\cos(6x)\,dx$
-    \item $\displaystyle \int x^2\sqrt{x^3+1}\,dx$
-    \item $\displaystyle \int \frac{dx}{x^2\sqrt{x^2+4}}$
-    \item $\displaystyle \int \ln(x^2+1)\,dx$
-    \item $\displaystyle \int \tan^3 x\sec^4 x\,dx$
-    \item $\displaystyle \int \frac{e^x}{(1+e^x)^2}\,dx$
-    \item $\displaystyle \int \frac{x^4}{\sqrt{36-x^2}}\,dx$
-    \item $\displaystyle \int x^2\cos(3x)\,dx$
-    \item $\displaystyle \int \cot^2 x\,dx$
-    \item $\displaystyle \int \frac{1}{x(1+\ln x)^2}\,dx$
-    \item $\displaystyle \int \frac{\sqrt{x^2-1}}{x^2}\,dx$
-    \item $\displaystyle \int x^3 e^{-x}\,dx$
-    \item $\displaystyle \int \csc^2 x\cot^3 x\,dx$
-    \item $\displaystyle \int \frac{4x^3}{\sqrt{x^4+6}}\,dx$
-    \item $\displaystyle \int \frac{dx}{(x^2+25)^{5/2}}$
-    \item $\displaystyle \int e^{2x}\sin(3x)\,dx$
-    \item $\displaystyle \int \sin^5(2x)\cos(2x)\,dx$
-    \item $\displaystyle \int \frac{\tan x}{\cos^2 x}\,dx$
-    \item $\displaystyle \int \frac{x^2}{(x^2+1)^{5/2}}\,dx$
-    \item $\displaystyle \int x\ln(x+1)\,dx$
-    \item $\displaystyle \int \cos^3(3x)\sin(3x)\,dx$
-    \item $\displaystyle \int \frac{x}{\sqrt{4-x^2}}\,dx$
-    \item $\displaystyle \int \frac{dx}{x^3\sqrt{x^2-9}}$
-    \item $\displaystyle \int x^2\arctan x\,dx$
-    \item $\displaystyle \int \sec^5 x\tan x\,dx$
+    \question{ans1}{\int 2x(x^2+3)^5\,dx}{\frac{(x^2+3)^6}{6}}
+    \question{ans2}{\int \frac{dx}{\sqrt{9-x^2}}}{\arcsin\!\left(\frac{x}{3}\right)}
+    \question{ans3}{\int x e^x\,dx}{e^x(x-1)}
+    \question{ans4}{\int \sin^3 x\cos^2 x\,dx}{\frac{\cos^5 x}{5}-\frac{\cos^3 x}{3}}
+    \question{ans5}{\int \frac{3x^2}{x^3+4}\,dx}{\ln\lvert x^3+4\rvert}
+    \question{ans6}{\int \sqrt{16-x^2}\,dx}{\frac{x}{2}\sqrt{16-x^2}+8\arcsin\!\left(\frac{x}{4}\right)}
+    \question{ans7}{\int x\cos x\,dx}{x\sin x+\cos x}
+    \question{ans8}{\int \sin^2 x\cos^2 x\,dx}{\frac{x}{8}-\frac{\sin(4x)}{32}}
+    \question{ans9}{\int e^{5x-1}\,dx}{\frac{e^{5x-1}}{5}}
+    \question{ans10}{\int \frac{x^2}{\sqrt{25-x^2}}\,dx}{\frac{25}{2}\arcsin\!\left(\frac{x}{5}\right)-\frac{x}{2}\sqrt{25-x^2}}
+    \question{ans11}{\int x\ln x\,dx}{\frac{x^2}{2}\ln x-\frac{x^2}{4}}
+    \question{ans12}{\int \cos^5 x\,dx}{\sin x-\frac{2}{3}\sin^3 x+\frac{1}{5}\sin^5 x}
+    \question{ans13}{\int x\sqrt{x^2+9}\,dx}{\frac{(x^2+9)^{3/2}}{3}}
+    \question{ans14}{\int \frac{dx}{(x^2+4)^{3/2}}}{\frac{x}{4\sqrt{x^2+4}}}
+    \question{ans15}{\int x^2 e^x\,dx}{e^x(x^2-2x+2)}
+    \question{ans16}{\int \sin^4 x\,dx}{\frac{3x}{8}-\frac{\sin(2x)}{4}+\frac{\sin(4x)}{32}}
+    \question{ans17}{\int \cos(4x+2)\,dx}{\frac{\sin(4x+2)}{4}}
+    \question{ans18}{\int \sqrt{x^2+9}\,dx}{\frac{x}{2}\sqrt{x^2+9}+\frac{9}{2}\ln\!\left\lvert x+\sqrt{x^2+9}\right\rvert}
+    \question{ans19}{\int e^x\sin x\,dx}{\frac{e^x}{2}(\sin x-\cos x)}
+    \question{ans20}{\int \tan^3 x\sec^2 x\,dx}{\frac{\tan^4 x}{4}}
+    \question{ans21}{\int \frac{(\ln x)^3}{x}\,dx}{\frac{(\ln x)^4}{4}}
+    \question{ans22}{\int \frac{x^2}{\sqrt{x^2+16}}\,dx}{\frac{x}{2}\sqrt{x^2+16}-8\ln\!\left\lvert x+\sqrt{x^2+16}\right\rvert}
+    \question{ans23}{\int \arctan x\,dx}{x\arctan x-\frac{1}{2}\ln(1+x^2)}
+    \question{ans24}{\int \sec^4 x\tan x\,dx}{\frac{\sec^4 x}{4}}
+    \question{ans25}{\int \frac{x}{(x^2+1)^2}\,dx}{-\frac{1}{2(x^2+1)}}
+    \question{ans26}{\int \frac{dx}{x^2\sqrt{x^2-1}}}{\frac{\sqrt{x^2-1}}{x}}
+    \question{ans27}{\int x\arctan x\,dx}{\frac{x^2+1}{2}\arctan x-\frac{x}{2}}
+    \question{ans28}{\int \tan^2 x\sec^4 x\,dx}{\frac{\tan^3 x}{3}+\frac{\tan^5 x}{5}}
+    \question{ans29}{\int \sin x\,e^{\cos x}\,dx}{-e^{\cos x}}
+    \question{ans30}{\int \frac{\sqrt{x^2-4}}{x}\,dx}{\sqrt{x^2-4}-2\arctan\!\left(\frac{\sqrt{x^2-4}}{2}\right)}
+    \question{ans31}{\int x^2\ln x\,dx}{\frac{x^3}{3}\ln x-\frac{x^3}{9}}
+    \question{ans32}{\int \sec^3 x\,dx}{\frac{1}{2}\left(\sec x\tan x+\ln\lvert\sec x+\tan x\rvert\right)}
+    \question{ans33}{\int \frac{1}{\sqrt{7-2x}}\,dx}{-\sqrt{7-2x}}
+    \question{ans34}{\int \frac{dx}{\sqrt{x^2-25}}}{\ln\!\left\lvert x+\sqrt{x^2-25}\right\rvert}
+    \question{ans35}{\int e^{2x}\cos x\,dx}{\frac{e^{2x}}{5}(2\cos x+\sin x)}
+    \question{ans36}{\int \csc^3 x\,dx}{\frac{1}{2}\left(-\csc x\cot x+\ln\lvert\csc x-\cot x\rvert\right)}
+    \question{ans37}{\int (6x-1)\sqrt{3x^2-x+2}\,dx}{\frac{2}{3}(3x^2-x+2)^{3/2}}
+    \question{ans38}{\int \frac{x^2}{(x^2+9)^{3/2}}\,dx}{\ln\!\left\lvert x+\sqrt{x^2+9}\right\rvert-\frac{x}{\sqrt{x^2+9}}}
+    \question{ans39}{\int \ln(1+x)\,dx}{(x+1)\ln(1+x)-x}
+    \question{ans40}{\int \sin(3x)\cos(5x)\,dx}{\frac{\cos(2x)}{4}-\frac{\cos(8x)}{16}}
+    \question{ans41}{\int \frac{e^{\sqrt{x}}}{\sqrt{x}}\,dx}{2e^{\sqrt{x}}}
+    \question{ans42}{\int \frac{dx}{x^2\sqrt{16-x^2}}}{-\frac{\sqrt{16-x^2}}{16x}}
+    \question{ans43}{\int x\sin(2x)\,dx}{-\frac{x\cos(2x)}{2}+\frac{\sin(2x)}{4}}
+    \question{ans44}{\int \cos^2(2x)\,dx}{\frac{x}{2}+\frac{\sin(4x)}{8}}
+    \question{ans45}{\int \frac{\sec^2 x}{(1+\tan x)^3}\,dx}{-\frac{1}{2(1+\tan x)^2}}
+    \question{ans46}{\int \frac{\sqrt{9-x^2}}{x^2}\,dx}{-\frac{\sqrt{9-x^2}}{x}-\arcsin\!\left(\frac{x}{3}\right)}
+    \question{ans47}{\int x^3\cos x\,dx}{x^3\sin x+3x^2\cos x-6x\sin x-6\cos x}
+    \question{ans48}{\int \sin^2(4x)\,dx}{\frac{x}{2}-\frac{\sin(8x)}{16}}
+    \question{ans49}{\int \frac{x^3}{x^4+5}\,dx}{\frac{1}{4}\ln(x^4+5)}
+    \question{ans50}{\int \frac{dx}{(x^2+1)^{3/2}}}{\frac{x}{\sqrt{x^2+1}}}
+    \question{ans51}{\int x^2\sin x\,dx}{-x^2\cos x+2x\sin x+2\cos x}
+    \question{ans52}{\int \sin^3 x\,dx}{-\cos x+\frac{\cos^3 x}{3}}
+    \question{ans53}{\int \frac{\cos x}{\sqrt{1+\sin x}}\,dx}{2\sqrt{1+\sin x}}
+    \question{ans54}{\int \frac{x^2}{\sqrt{x^2-9}}\,dx}{\frac{x}{2}\sqrt{x^2-9}+\frac{9}{2}\ln\!\left\lvert x+\sqrt{x^2-9}\right\rvert}
+    \question{ans55}{\int \ln x\,dx}{x\ln x-x}
+    \question{ans56}{\int \cos^3 x\,dx}{\sin x-\frac{\sin^3 x}{3}}
+    \question{ans57}{\int \frac{1}{x\sqrt{\ln x}}\,dx}{2\sqrt{\ln x}}
+    \question{ans58}{\int \frac{\sqrt{x^2+4}}{x^2}\,dx}{-\frac{\sqrt{x^2+4}}{x}+\ln\!\left\lvert x+\sqrt{x^2+4}\right\rvert}
+    \question{ans59}{\int x e^{3x}\,dx}{e^{3x}\left(\frac{x}{3}-\frac{1}{9}\right)}
+    \question{ans60}{\int \tan^4 x\,dx}{\frac{\tan^3 x}{3}-\tan x+x}
+    \question{ans61}{\int (2x+1)e^{x^2+x}\,dx}{e^{x^2+x}}
+    \question{ans62}{\int \frac{dx}{x\sqrt{x^2+9}}}{\frac{1}{3}\ln\!\left\lvert\frac{x}{3+\sqrt{x^2+9}}\right\rvert}
+    \question{ans63}{\int x\ln(2x)\,dx}{\frac{x^2}{2}\ln(2x)-\frac{x^2}{4}}
+    \question{ans64}{\int \sec^2 x\tan^3 x\,dx}{\frac{\tan^4 x}{4}}
+    \question{ans65}{\int \frac{\ln(2x)}{x}\,dx}{\frac{1}{2}[\ln(2x)]^2}
+    \question{ans66}{\int \frac{dx}{(25-x^2)^{3/2}}}{\frac{x}{25\sqrt{25-x^2}}}
+    \question{ans67}{\int e^x\cos(2x)\,dx}{\frac{e^x}{5}(\cos(2x)+2\sin(2x))}
+    \question{ans68}{\int \sin^2 x\cos^4 x\,dx}{\frac{x}{16}+\frac{\sin(2x)}{64}-\frac{\sin(4x)}{64}-\frac{\sin(6x)}{192}}
+    \question{ans69}{\int \frac{x^2}{(x^3-2)^4}\,dx}{-\frac{1}{9(x^3-2)^3}}
+    \question{ans70}{\int \frac{x^2}{(x^2-4)^{3/2}}\,dx}{\ln\!\left\lvert x+\sqrt{x^2-4}\right\rvert-\frac{x}{\sqrt{x^2-4}}}
+    \question{ans71}{\int x^2 e^{2x}\,dx}{e^{2x}\left(\frac{x^2}{2}-\frac{x}{2}+\frac{1}{4}\right)}
+    \question{ans72}{\int \sin(2x)\sin(7x)\,dx}{\frac{\sin(5x)}{10}-\frac{\sin(9x)}{18}}
+    \question{ans73}{\int \frac{\sin(3x)}{2+\cos(3x)}\,dx}{-\frac{1}{3}\ln(2+\cos(3x))}
+    \question{ans74}{\int \sqrt{x^2-16}\,dx}{\frac{x}{2}\sqrt{x^2-16}-8\ln\!\left\lvert x+\sqrt{x^2-16}\right\rvert}
+    \question{ans75}{\int x\arcsin x\,dx}{\frac{2x^2-1}{4}\arcsin x+\frac{x}{4}\sqrt{1-x^2}}
+    \question{ans76}{\int \cos(3x)\cos(6x)\,dx}{\frac{\sin(3x)}{6}+\frac{\sin(9x)}{18}}
+    \question{ans77}{\int x^2\sqrt{x^3+1}\,dx}{\frac{2}{9}(x^3+1)^{3/2}}
+    \question{ans78}{\int \frac{dx}{x^2\sqrt{x^2+4}}}{-\frac{\sqrt{x^2+4}}{4x}}
+    \question{ans79}{\int \ln(x^2+1)\,dx}{x\ln(x^2+1)-2x+2\arctan x}
+    \question{ans80}{\int \tan^3 x\sec^4 x\,dx}{\frac{\tan^4 x}{4}+\frac{\tan^6 x}{6}}
+    \question{ans81}{\int \frac{e^x}{(1+e^x)^2}\,dx}{-\frac{1}{1+e^x}}
+    \question{ans82}{\int \frac{x^4}{\sqrt{36-x^2}}\,dx}{486\arcsin\!\left(\frac{x}{6}\right)-\frac{x(x^2+54)}{4}\sqrt{36-x^2}}
+    \question{ans83}{\int x^2\cos(3x)\,dx}{\frac{x^2\sin(3x)}{3}+\frac{2x\cos(3x)}{9}-\frac{2\sin(3x)}{27}}
+    \question{ans84}{\int \cot^2 x\,dx}{-\cot x-x}
+    \question{ans85}{\int \frac{1}{x(1+\ln x)^2}\,dx}{-\frac{1}{1+\ln x}}
+    \question{ans86}{\int \frac{\sqrt{x^2-1}}{x^2}\,dx}{\ln\!\left\lvert x+\sqrt{x^2-1}\right\rvert-\frac{\sqrt{x^2-1}}{x}}
+    \question{ans87}{\int x^3 e^{-x}\,dx}{-e^{-x}(x^3+3x^2+6x+6)}
+    \question{ans88}{\int \csc^2 x\cot^3 x\,dx}{-\frac{\cot^4 x}{4}}
+    \question{ans89}{\int \frac{4x^3}{\sqrt{x^4+6}}\,dx}{2\sqrt{x^4+6}}
+    \question{ans90}{\int \frac{dx}{(x^2+25)^{5/2}}}{\frac{x(2x^2+75)}{1875(x^2+25)^{3/2}}}
+    \question{ans91}{\int e^{2x}\sin(3x)\,dx}{\frac{e^{2x}}{13}(2\sin(3x)-3\cos(3x))}
+    \question{ans92}{\int \sin^5(2x)\cos(2x)\,dx}{\frac{\sin^6(2x)}{12}}
+    \question{ans93}{\int \frac{\tan x}{\cos^2 x}\,dx}{\frac{\tan^2 x}{2}}
+    \question{ans94}{\int \frac{x^2}{(x^2+1)^{5/2}}\,dx}{\frac{x^3}{3(x^2+1)^{3/2}}}
+    \question{ans95}{\int x\ln(x+1)\,dx}{\frac{x^2-1}{2}\ln(x+1)-\frac{x^2}{4}+\frac{x}{2}}
+    \question{ans96}{\int \cos^3(3x)\sin(3x)\,dx}{-\frac{\cos^4(3x)}{12}}
+    \question{ans97}{\int \frac{x}{\sqrt{4-x^2}}\,dx}{-\sqrt{4-x^2}}
+    \question{ans98}{\int \frac{dx}{x^3\sqrt{x^2-9}}}{\frac{\sqrt{x^2-9}}{18x^2}+\frac{1}{54}\arctan\!\left(\frac{\sqrt{x^2-9}}{3}\right)}
+    \question{ans99}{\int x^2\arctan x\,dx}{\frac{x^3}{3}\arctan x-\frac{x^2}{6}+\frac{1}{6}\ln(1+x^2)}
+    \question{ans100}{\int \sec^5 x\tan x\,dx}{\frac{\sec^5 x}{5}}
 \end{enumerate}
 
 \end{document}
