@@ -1,0 +1,880 @@
+{
+  "ans51": {
+    "method": "Integration by parts twice",
+    "steps": [
+      {
+        "text": "Choose $u=x^2$ and $dv=\\sin x\\,dx$, so $du=2x\\,dx$ and $v=-\\cos x$.",
+        "math": "I=-x^2\\cos x+2\\int x\\cos x\\,dx"
+      },
+      {
+        "text": "Integrate the remaining product by parts with $u=x$ and $dv=\\cos x\\,dx$.",
+        "math": "\\int x\\cos x\\,dx=x\\sin x-\\int\\sin x\\,dx=x\\sin x+\\cos x"
+      },
+      {
+        "text": "Substitute this result into the first equation, distribute the factor of two, and add the constant.",
+        "math": "I=-x^2\\cos x+2x\\sin x+2\\cos x+C"
+      }
+    ]
+  },
+  "ans52": {
+    "method": "Odd sine power",
+    "steps": [
+      {
+        "text": "Save one sine factor and use $\\sin^2x=1-\\cos^2x$.",
+        "math": "I=\\int(1-\\cos^2x)\\sin x\\,dx"
+      },
+      {
+        "text": "Let $u=\\cos x$, so $du=-\\sin x\\,dx$.",
+        "math": "I=-\\int(1-u^2)\\,du"
+      },
+      {
+        "text": "Integrate the polynomial and replace $u$ with $\\cos x$.",
+        "math": "I=-u+\\frac{u^3}{3}+C=-\\cos x+\\frac{\\cos^3x}{3}+C"
+      }
+    ]
+  },
+  "ans53": {
+    "method": "Substitution",
+    "steps": [
+      {
+        "text": "The derivative of the expression under the square root is in the numerator.",
+        "math": "u=1+\\sin x,\\qquad du=\\cos x\\,dx"
+      },
+      {
+        "text": "Rewrite the integral as a power of $u$.",
+        "math": "I=\\int u^{-1/2}\\,du"
+      },
+      {
+        "text": "Apply the power rule and substitute back.",
+        "math": "I=2u^{1/2}+C=2\\sqrt{1+\\sin x}+C"
+      }
+    ]
+  },
+  "ans54": {
+    "method": "Integration by parts and a radical identity",
+    "steps": [
+      {
+        "text": "Write $r=\\sqrt{x^2-9}$ and use $dr=x\\,dx/r$. Integration by parts with $u=x$ and $dv=x\\,dx/r$ gives:",
+        "math": "I=xr-\\int r\\,dx"
+      },
+      {
+        "text": "Use $r=(x^2-9)/r$ to express the remaining integral in terms of $I$. This is valid on either interval $|x|>3$.",
+        "math": "\\int r\\,dx=I-9L,\\qquad L=\\int\\frac{dx}{r}"
+      },
+      {
+        "text": "Since $d[\\ln|x+r|]/dx=1/r$, solve the resulting equation for $I$.",
+        "math": "2I=xr+9\\ln|x+r|,\\qquad I=\\frac{xr}{2}+\\frac92\\ln|x+r|+C"
+      }
+    ]
+  },
+  "ans55": {
+    "method": "Integration by parts",
+    "steps": [
+      {
+        "text": "Treat the logarithm as a product with $1$ and choose the following parts.",
+        "math": "u=\\ln x,\\quad dv=dx,\\quad du=\\frac{dx}{x},\\quad v=x"
+      },
+      {
+        "text": "Apply $\\int u\\,dv=uv-\\int v\\,du$.",
+        "math": "I=x\\ln x-\\int x\\frac{dx}{x}=x\\ln x-\\int1\\,dx"
+      },
+      {
+        "text": "Integrate the constant and include $C$.",
+        "math": "I=x\\ln x-x+C"
+      }
+    ]
+  },
+  "ans56": {
+    "method": "Odd cosine power",
+    "steps": [
+      {
+        "text": "Save one cosine factor and use $\\cos^2x=1-\\sin^2x$.",
+        "math": "I=\\int(1-\\sin^2x)\\cos x\\,dx"
+      },
+      {
+        "text": "Let $u=\\sin x$, so $du=\\cos x\\,dx$.",
+        "math": "I=\\int(1-u^2)\\,du"
+      },
+      {
+        "text": "Integrate the polynomial, then substitute back.",
+        "math": "I=u-\\frac{u^3}{3}+C=\\sin x-\\frac{\\sin^3x}{3}+C"
+      }
+    ]
+  },
+  "ans57": {
+    "method": "Logarithmic substitution",
+    "steps": [
+      {
+        "text": "Use the logarithm as the new variable.",
+        "math": "u=\\ln x,\\qquad du=\\frac{dx}{x}"
+      },
+      {
+        "text": "Rewrite the radical in terms of $u$.",
+        "math": "I=\\int u^{-1/2}\\,du=2\\sqrt u+C"
+      },
+      {
+        "text": "Replace $u$ with $\\ln x$; the original real integrand has $x>1$.",
+        "math": "I=2\\sqrt{\\ln x}+C"
+      }
+    ]
+  },
+  "ans58": {
+    "method": "Integration by parts",
+    "steps": [
+      {
+        "text": "Set $r=\\sqrt{x^2+4}$. Choose $u=r$ and $dv=x^{-2}\\,dx$.",
+        "math": "du=\\frac{x}{r}\\,dx,\\qquad v=-\\frac1x"
+      },
+      {
+        "text": "Apply integration by parts; the remaining integral has a standard logarithmic derivative.",
+        "math": "I=-\\frac rx+\\int\\frac{dx}{r}"
+      },
+      {
+        "text": "Differentiate $\\ln|x+r|$ to get $1/r$, and substitute for $r$. The work applies on each interval with $x\\ne0$.",
+        "math": "I=-\\frac{\\sqrt{x^2+4}}x+\\ln\\left|x+\\sqrt{x^2+4}\\right|+C"
+      }
+    ]
+  },
+  "ans59": {
+    "method": "Integration by parts",
+    "steps": [
+      {
+        "text": "Choose the polynomial as $u$ and integrate the exponential as $dv$.",
+        "math": "u=x,\\quad dv=e^{3x}\\,dx,\\quad du=dx,\\quad v=\\frac{e^{3x}}3"
+      },
+      {
+        "text": "Apply the integration-by-parts formula.",
+        "math": "I=\\frac{xe^{3x}}3-\\frac13\\int e^{3x}\\,dx"
+      },
+      {
+        "text": "Integrate the exponential again and factor.",
+        "math": "I=\\frac{xe^{3x}}3-\\frac{e^{3x}}9+C=e^{3x}\\left(\\frac x3-\\frac19\\right)+C"
+      }
+    ]
+  },
+  "ans60": {
+    "method": "Tangent identity",
+    "steps": [
+      {
+        "text": "Use $\\tan^2x=\\sec^2x-1$ on one pair of tangent factors.",
+        "math": "\\tan^4x=\\tan^2x\\sec^2x-\\tan^2x"
+      },
+      {
+        "text": "The first term uses $u=\\tan x$. Replace the remaining $\\tan^2x$ by $\\sec^2x-1$.",
+        "math": "I=\\int u^2\\,du-\\int(\\sec^2x-1)\\,dx"
+      },
+      {
+        "text": "Integrate both terms and substitute back.",
+        "math": "I=\\frac{\\tan^3x}{3}-\\tan x+x+C"
+      }
+    ]
+  },
+  "ans61": {
+    "method": "Substitution",
+    "steps": [
+      {
+        "text": "The exponent has derivative $2x+1$.",
+        "math": "u=x^2+x,\\qquad du=(2x+1)\\,dx"
+      },
+      {
+        "text": "Substitute into the integral.",
+        "math": "I=\\int e^u\\,du=e^u+C"
+      },
+      {
+        "text": "Return to the original variable.",
+        "math": "I=e^{x^2+x}+C"
+      }
+    ]
+  },
+  "ans62": {
+    "method": "Radical substitution and partial fractions",
+    "steps": [
+      {
+        "text": "Let $t=\\sqrt{x^2+9}$, so $dt=x\\,dx/t$ and $x^2=t^2-9$. This substitution works on each interval $x\\ne0$.",
+        "math": "I=\\int\\frac{dt}{t^2-9}"
+      },
+      {
+        "text": "Split the rational expression into partial fractions.",
+        "math": "\\frac1{t^2-9}=\\frac16\\left(\\frac1{t-3}-\\frac1{t+3}\\right)"
+      },
+      {
+        "text": "Integrate the two logarithms.",
+        "math": "I=\\frac16\\ln\\left|\\frac{t-3}{t+3}\\right|+C"
+      },
+      {
+        "text": "Use $(t-3)(t+3)=x^2$ and substitute back.",
+        "math": "I=\\frac13\\ln\\left|\\frac{x}{t+3}\\right|+C=\\frac13\\ln\\left|\\frac{x}{3+\\sqrt{x^2+9}}\\right|+C"
+      }
+    ]
+  },
+  "ans63": {
+    "method": "Integration by parts",
+    "steps": [
+      {
+        "text": "Choose $u=\\ln(2x)$ and $dv=x\\,dx$. The chain rule gives $du=dx/x$.",
+        "math": "v=\\frac{x^2}{2}"
+      },
+      {
+        "text": "Apply integration by parts and simplify the remaining integrand.",
+        "math": "I=\\frac{x^2}{2}\\ln(2x)-\\frac12\\int x\\,dx"
+      },
+      {
+        "text": "Integrate the last power.",
+        "math": "I=\\frac{x^2}{2}\\ln(2x)-\\frac{x^2}{4}+C"
+      }
+    ]
+  },
+  "ans64": {
+    "method": "Tangent substitution",
+    "steps": [
+      {
+        "text": "The derivative of tangent supplies the other factor.",
+        "math": "u=\\tan x,\\qquad du=\\sec^2x\\,dx"
+      },
+      {
+        "text": "Integrate the resulting power.",
+        "math": "I=\\int u^3\\,du=\\frac{u^4}{4}+C"
+      },
+      {
+        "text": "Replace $u$ with $\\tan x$.",
+        "math": "I=\\frac{\\tan^4x}{4}+C"
+      }
+    ]
+  },
+  "ans65": {
+    "method": "Logarithmic substitution",
+    "steps": [
+      {
+        "text": "Let the logarithm be $u$; its derivative includes the chain-rule factor.",
+        "math": "u=\\ln(2x),\\qquad du=\\frac{2}{2x}\\,dx=\\frac{dx}{x}"
+      },
+      {
+        "text": "Rewrite and integrate.",
+        "math": "I=\\int u\\,du=\\frac{u^2}{2}+C"
+      },
+      {
+        "text": "Substitute back.",
+        "math": "I=\\frac12[\\ln(2x)]^2+C"
+      }
+    ]
+  },
+  "ans66": {
+    "method": "Trigonometric substitution",
+    "steps": [
+      {
+        "text": "For $|x|<5$, set $x=5\\sin\\theta$ with $-\\pi/2<\\theta<\\pi/2$.",
+        "math": "dx=5\\cos\\theta\\,d\\theta,\\qquad \\sqrt{25-x^2}=5\\cos\\theta"
+      },
+      {
+        "text": "Cancel factors and integrate.",
+        "math": "I=\\frac1{25}\\int\\sec^2\\theta\\,d\\theta=\\frac{\\tan\\theta}{25}+C"
+      },
+      {
+        "text": "Use $\\tan\\theta=x/\\sqrt{25-x^2}$.",
+        "math": "I=\\frac{x}{25\\sqrt{25-x^2}}+C"
+      }
+    ]
+  },
+  "ans67": {
+    "method": "Integration by parts twice",
+    "steps": [
+      {
+        "text": "Call the requested integral $I$ and let $J=\\int e^x\\sin(2x)\\,dx$. Integrate $I$ by parts with $u=\\cos(2x)$ and $dv=e^x\\,dx$.",
+        "math": "I=e^x\\cos(2x)+2J"
+      },
+      {
+        "text": "Integrate $J$ by parts using $u=\\sin(2x)$ and $dv=e^x\\,dx$.",
+        "math": "J=e^x\\sin(2x)-2I"
+      },
+      {
+        "text": "Substitute for $J$ and solve for $I$.",
+        "math": "5I=e^x\\cos(2x)+2e^x\\sin(2x),\\qquad I=\\frac{e^x}{5}\\bigl(\\cos(2x)+2\\sin(2x)\\bigr)+C"
+      }
+    ]
+  },
+  "ans68": {
+    "method": "Power-reduction identities",
+    "steps": [
+      {
+        "text": "Write $c=\\cos(2x)$ and use the half-angle identities.",
+        "math": "\\sin^2x\\cos^4x=\\frac18(1-c)(1+c)^2=\\frac18(1+c-c^2-c^3)"
+      },
+      {
+        "text": "Use $c^2=(1+\\cos4x)/2$ and $c^3=(3\\cos2x+\\cos6x)/4$.",
+        "math": "\\sin^2x\\cos^4x=\\frac1{16}+\\frac{\\cos2x}{32}-\\frac{\\cos4x}{16}-\\frac{\\cos6x}{32}"
+      },
+      {
+        "text": "Integrate term by term, dividing each sine by its frequency.",
+        "math": "I=\\frac{x}{16}+\\frac{\\sin2x}{64}-\\frac{\\sin4x}{64}-\\frac{\\sin6x}{192}+C"
+      }
+    ]
+  },
+  "ans69": {
+    "method": "Substitution and a negative power",
+    "steps": [
+      {
+        "text": "Set the cubic denominator expression equal to $u$.",
+        "math": "u=x^3-2,\\qquad du=3x^2\\,dx"
+      },
+      {
+        "text": "Include the factor of one third and apply the power rule.",
+        "math": "I=\\frac13\\int u^{-4}\\,du=-\\frac1{9u^3}+C"
+      },
+      {
+        "text": "Replace $u$ with the original cubic.",
+        "math": "I=-\\frac1{9(x^3-2)^3}+C"
+      }
+    ]
+  },
+  "ans70": {
+    "method": "Radical decomposition",
+    "steps": [
+      {
+        "text": "Let $r=\\sqrt{x^2-4}$ and split $x^2=(x^2-4)+4$.",
+        "math": "\\frac{x^2}{r^3}=\\frac1r+\\frac4{r^3}"
+      },
+      {
+        "text": "Recognize two derivatives; both identities hold on either interval $|x|>2$.",
+        "math": "\\frac{d}{dx}\\ln|x+r|=\\frac1r,\\qquad \\frac{d}{dx}\\left(\\frac xr\\right)=-\\frac4{r^3}"
+      },
+      {
+        "text": "Integrate the two pieces and replace $r$.",
+        "math": "I=\\ln\\left|x+\\sqrt{x^2-4}\\right|-\\frac{x}{\\sqrt{x^2-4}}+C"
+      }
+    ]
+  },
+  "ans71": {
+    "method": "Integration by parts twice",
+    "steps": [
+      {
+        "text": "Choose $u=x^2$ and $dv=e^{2x}\\,dx$.",
+        "math": "I=\\frac{x^2e^{2x}}2-\\int xe^{2x}\\,dx"
+      },
+      {
+        "text": "Integrate the remaining product by parts with $u=x$ and $dv=e^{2x}\\,dx$.",
+        "math": "\\int xe^{2x}\\,dx=\\frac{xe^{2x}}2-\\frac{e^{2x}}4"
+      },
+      {
+        "text": "Substitute and factor out the exponential.",
+        "math": "I=e^{2x}\\left(\\frac{x^2}{2}-\\frac x2+\\frac14\\right)+C"
+      }
+    ]
+  },
+  "ans72": {
+    "method": "Product-to-sum identity",
+    "steps": [
+      {
+        "text": "Use $\\sin A\\sin B=[\\cos(A-B)-\\cos(A+B)]/2$.",
+        "math": "\\sin(2x)\\sin(7x)=\\frac12\\bigl(\\cos(5x)-\\cos(9x)\\bigr)"
+      },
+      {
+        "text": "Separate the two integrals.",
+        "math": "I=\\frac12\\int\\cos(5x)\\,dx-\\frac12\\int\\cos(9x)\\,dx"
+      },
+      {
+        "text": "Divide each sine antiderivative by its frequency.",
+        "math": "I=\\frac{\\sin(5x)}{10}-\\frac{\\sin(9x)}{18}+C"
+      }
+    ]
+  },
+  "ans73": {
+    "method": "Logarithmic substitution",
+    "steps": [
+      {
+        "text": "Choose the denominator as the new variable.",
+        "math": "u=2+\\cos(3x),\\qquad du=-3\\sin(3x)\\,dx"
+      },
+      {
+        "text": "Integrate the reciprocal, retaining the factor $-1/3$.",
+        "math": "I=-\\frac13\\int\\frac{du}{u}=-\\frac13\\ln|u|+C"
+      },
+      {
+        "text": "Since $2+\\cos(3x)\\ge1$, the logarithm needs no absolute-value signs.",
+        "math": "I=-\\frac13\\ln(2+\\cos(3x))+C"
+      }
+    ]
+  },
+  "ans74": {
+    "method": "Integration by parts and a radical identity",
+    "steps": [
+      {
+        "text": "Let $r=\\sqrt{x^2-16}$ and $I=\\int r\\,dx$. Integration by parts with $u=r$, $dv=dx$ gives:",
+        "math": "I=xr-\\int\\frac{x^2}{r}\\,dx"
+      },
+      {
+        "text": "Use $x^2=r^2+16$ to express the remaining integral in terms of $I$.",
+        "math": "I=xr-I-16\\int\\frac{dx}{r}"
+      },
+      {
+        "text": "Use $d[\\ln|x+r|]/dx=1/r$ and solve for $I$. This holds on each interval $|x|>4$.",
+        "math": "I=\\frac{xr}{2}-8\\ln|x+r|+C"
+      }
+    ]
+  },
+  "ans75": {
+    "method": "Integration by parts and sine substitution",
+    "steps": [
+      {
+        "text": "Choose $u=\\arcsin x$ and $dv=x\\,dx$.",
+        "math": "I=\\frac{x^2}{2}\\arcsin x-\\frac12J,\\qquad J=\\int\\frac{x^2}{\\sqrt{1-x^2}}\\,dx"
+      },
+      {
+        "text": "In $J$, put $x=\\sin\\theta$ with $-\\pi/2<\\theta<\\pi/2$.",
+        "math": "J=\\int\\sin^2\\theta\\,d\\theta=\\frac\\theta2-\\frac{\\sin2\\theta}{4}"
+      },
+      {
+        "text": "Use $\\theta=\\arcsin x$ and $\\sin2\\theta=2x\\sqrt{1-x^2}$.",
+        "math": "J=\\frac12\\arcsin x-\\frac x2\\sqrt{1-x^2}"
+      },
+      {
+        "text": "Substitute into $I$ and combine the inverse-sine terms.",
+        "math": "I=\\frac{2x^2-1}{4}\\arcsin x+\\frac x4\\sqrt{1-x^2}+C"
+      }
+    ]
+  },
+  "ans76": {
+    "method": "Product-to-sum identity",
+    "steps": [
+      {
+        "text": "Use $\\cos A\\cos B=[\\cos(A-B)+\\cos(A+B)]/2$.",
+        "math": "\\cos(3x)\\cos(6x)=\\frac12\\bigl(\\cos(3x)+\\cos(9x)\\bigr)"
+      },
+      {
+        "text": "Separate the integral into two cosine terms.",
+        "math": "I=\\frac12\\int\\cos(3x)\\,dx+\\frac12\\int\\cos(9x)\\,dx"
+      },
+      {
+        "text": "Integrate, dividing by the inner derivatives.",
+        "math": "I=\\frac{\\sin(3x)}6+\\frac{\\sin(9x)}{18}+C"
+      }
+    ]
+  },
+  "ans77": {
+    "method": "Substitution",
+    "steps": [
+      {
+        "text": "Use the expression under the radical as $u$.",
+        "math": "u=x^3+1,\\qquad du=3x^2\\,dx"
+      },
+      {
+        "text": "Rewrite the integral and apply the power rule.",
+        "math": "I=\\frac13\\int u^{1/2}\\,du=\\frac29u^{3/2}+C"
+      },
+      {
+        "text": "Substitute back.",
+        "math": "I=\\frac29(x^3+1)^{3/2}+C"
+      }
+    ]
+  },
+  "ans78": {
+    "method": "Recognize a quotient derivative",
+    "steps": [
+      {
+        "text": "Let $r=\\sqrt{x^2+4}$, so $r'=x/r$. Differentiate $r/x$ by the quotient rule.",
+        "math": "\\frac{d}{dx}\\left(\\frac rx\\right)=\\frac{x^2/r-r}{x^2}"
+      },
+      {
+        "text": "Use $r^2=x^2+4$ to simplify the derivative.",
+        "math": "\\frac{x^2-r^2}{x^2r}=-\\frac4{x^2r}"
+      },
+      {
+        "text": "Multiply by $-1/4$ and integrate. This applies for either sign of $x$, excluding zero.",
+        "math": "I=-\\frac{r}{4x}+C=-\\frac{\\sqrt{x^2+4}}{4x}+C"
+      }
+    ]
+  },
+  "ans79": {
+    "method": "Integration by parts and division",
+    "steps": [
+      {
+        "text": "Choose $u=\\ln(x^2+1)$ and $dv=dx$.",
+        "math": "I=x\\ln(x^2+1)-2\\int\\frac{x^2}{x^2+1}\\,dx"
+      },
+      {
+        "text": "Divide the rational expression into a constant and a reciprocal quadratic.",
+        "math": "\\frac{x^2}{x^2+1}=1-\\frac1{x^2+1}"
+      },
+      {
+        "text": "Use $\\int dx/(1+x^2)=\\arctan x$ and simplify.",
+        "math": "I=x\\ln(x^2+1)-2x+2\\arctan x+C"
+      }
+    ]
+  },
+  "ans80": {
+    "method": "Tangent substitution",
+    "steps": [
+      {
+        "text": "Save one factor of $\\sec^2x\\,dx$ and replace the other using $\\sec^2x=1+\\tan^2x$.",
+        "math": "I=\\int\\tan^3x(1+\\tan^2x)\\sec^2x\\,dx"
+      },
+      {
+        "text": "Let $u=\\tan x$, so $du=\\sec^2x\\,dx$.",
+        "math": "I=\\int(u^3+u^5)\\,du=\\frac{u^4}{4}+\\frac{u^6}{6}+C"
+      },
+      {
+        "text": "Substitute back.",
+        "math": "I=\\frac{\\tan^4x}{4}+\\frac{\\tan^6x}{6}+C"
+      }
+    ]
+  },
+  "ans81": {
+    "method": "Substitution",
+    "steps": [
+      {
+        "text": "The derivative of the denominator base is the numerator.",
+        "math": "u=1+e^x,\\qquad du=e^x\\,dx"
+      },
+      {
+        "text": "Rewrite and integrate the negative power.",
+        "math": "I=\\int u^{-2}\\,du=-u^{-1}+C"
+      },
+      {
+        "text": "Replace $u$ with $1+e^x$.",
+        "math": "I=-\\frac1{1+e^x}+C"
+      }
+    ]
+  },
+  "ans82": {
+    "method": "Trigonometric substitution and power reduction",
+    "steps": [
+      {
+        "text": "For $|x|<6$, use $x=6\\sin\\theta$ with $-\\pi/2<\\theta<\\pi/2$. Then $dx=6\\cos\\theta\\,d\\theta$ and the radical is $6\\cos\\theta$.",
+        "math": "I=1296\\int\\sin^4\\theta\\,d\\theta"
+      },
+      {
+        "text": "Apply $\\sin^4\\theta=(3-4\\cos2\\theta+\\cos4\\theta)/8$ and integrate.",
+        "math": "I=486\\theta-324\\sin2\\theta+\\frac{81}{2}\\sin4\\theta+C"
+      },
+      {
+        "text": "Write $r=\\sqrt{36-x^2}$ and convert the double and quadruple angles.",
+        "math": "\\theta=\\arcsin(x/6),\\quad \\sin2\\theta=\\frac{xr}{18},\\quad \\sin4\\theta=\\frac{xr(18-x^2)}{162}"
+      },
+      {
+        "text": "Combine the two terms involving the radical.",
+        "math": "-324\\frac{xr}{18}+\\frac{81}{2}\\frac{xr(18-x^2)}{162}=-\\frac{x(x^2+54)r}{4}"
+      }
+    ]
+  },
+  "ans83": {
+    "method": "Integration by parts twice",
+    "steps": [
+      {
+        "text": "Choose $u=x^2$ and $dv=\\cos(3x)\\,dx$.",
+        "math": "I=\\frac{x^2\\sin(3x)}3-\\frac23\\int x\\sin(3x)\\,dx"
+      },
+      {
+        "text": "Integrate the remaining product by parts with $u=x$ and $dv=\\sin(3x)\\,dx$.",
+        "math": "\\int x\\sin(3x)\\,dx=-\\frac{x\\cos(3x)}3+\\frac{\\sin(3x)}9"
+      },
+      {
+        "text": "Substitute and distribute the factor $-2/3$.",
+        "math": "I=\\frac{x^2\\sin(3x)}3+\\frac{2x\\cos(3x)}9-\\frac{2\\sin(3x)}{27}+C"
+      }
+    ]
+  },
+  "ans84": {
+    "method": "Pythagorean identity",
+    "steps": [
+      {
+        "text": "Use the cotangent identity to obtain basic antiderivatives.",
+        "math": "\\cot^2x=\\csc^2x-1"
+      },
+      {
+        "text": "Separate the integral.",
+        "math": "I=\\int\\csc^2x\\,dx-\\int1\\,dx"
+      },
+      {
+        "text": "Since the derivative of $\\cot x$ is $-\\csc^2x$, integrate with the negative sign.",
+        "math": "I=-\\cot x-x+C"
+      }
+    ]
+  },
+  "ans85": {
+    "method": "Logarithmic substitution",
+    "steps": [
+      {
+        "text": "Choose the base of the squared denominator as $u$.",
+        "math": "u=1+\\ln x,\\qquad du=\\frac{dx}{x}"
+      },
+      {
+        "text": "Apply the power rule to $u^{-2}$.",
+        "math": "I=\\int u^{-2}\\,du=-\\frac1u+C"
+      },
+      {
+        "text": "Substitute back on any interval where the original integrand is defined.",
+        "math": "I=-\\frac1{1+\\ln x}+C"
+      }
+    ]
+  },
+  "ans86": {
+    "method": "Integration by parts",
+    "steps": [
+      {
+        "text": "Let $r=\\sqrt{x^2-1}$. Choose $u=r$ and $dv=x^{-2}\\,dx$.",
+        "math": "du=\\frac{x}{r}\\,dx,\\qquad v=-\\frac1x"
+      },
+      {
+        "text": "Apply integration by parts.",
+        "math": "I=-\\frac rx+\\int\\frac{dx}{r}"
+      },
+      {
+        "text": "The remaining antiderivative is $\\ln|x+r|$ because its derivative is $1/r$. This holds on each interval $|x|>1$.",
+        "math": "I=\\ln\\left|x+\\sqrt{x^2-1}\\right|-\\frac{\\sqrt{x^2-1}}x+C"
+      }
+    ]
+  },
+  "ans87": {
+    "method": "Repeated integration by parts",
+    "steps": [
+      {
+        "text": "Let $I_n=\\int x^ne^{-x}\\,dx$. Use $u=x^n$ and $dv=e^{-x}\\,dx$.",
+        "math": "I_n=-x^ne^{-x}+nI_{n-1}"
+      },
+      {
+        "text": "Apply the recurrence to the cubic, then the quadratic and linear terms.",
+        "math": "I_3=-x^3e^{-x}+3I_2,\\quad I_2=-x^2e^{-x}+2I_1,\\quad I_1=-xe^{-x}+I_0"
+      },
+      {
+        "text": "Use $I_0=-e^{-x}$, substitute upward, and factor.",
+        "math": "I_3=-e^{-x}(x^3+3x^2+6x+6)+C"
+      }
+    ]
+  },
+  "ans88": {
+    "method": "Cotangent substitution",
+    "steps": [
+      {
+        "text": "The derivative of cotangent introduces a minus sign.",
+        "math": "u=\\cot x,\\qquad du=-\\csc^2x\\,dx"
+      },
+      {
+        "text": "Integrate the resulting power.",
+        "math": "I=-\\int u^3\\,du=-\\frac{u^4}{4}+C"
+      },
+      {
+        "text": "Replace $u$ with $\\cot x$.",
+        "math": "I=-\\frac{\\cot^4x}{4}+C"
+      }
+    ]
+  },
+  "ans89": {
+    "method": "Substitution",
+    "steps": [
+      {
+        "text": "Use the expression under the square root as $u$.",
+        "math": "u=x^4+6,\\qquad du=4x^3\\,dx"
+      },
+      {
+        "text": "Rewrite and apply the power rule.",
+        "math": "I=\\int u^{-1/2}\\,du=2u^{1/2}+C"
+      },
+      {
+        "text": "Substitute back.",
+        "math": "I=2\\sqrt{x^4+6}+C"
+      }
+    ]
+  },
+  "ans90": {
+    "method": "Trigonometric substitution",
+    "steps": [
+      {
+        "text": "Set $x=5\\tan\\theta$ with $-\\pi/2<\\theta<\\pi/2$, so $dx=5\\sec^2\\theta\\,d\\theta$ and $\\sqrt{x^2+25}=5\\sec\\theta$.",
+        "math": "I=\\frac1{625}\\int\\cos^3\\theta\\,d\\theta"
+      },
+      {
+        "text": "Write $\\cos^3\\theta=(1-\\sin^2\\theta)\\cos\\theta$ and use $u=\\sin\\theta$.",
+        "math": "I=\\frac1{625}\\int(1-u^2)\\,du=\\frac1{625}\\left(u-\\frac{u^3}{3}\\right)+C"
+      },
+      {
+        "text": "Replace $u$ with $x/\\sqrt{x^2+25}$.",
+        "math": "I=\\frac{x}{625\\sqrt{x^2+25}}-\\frac{x^3}{1875(x^2+25)^{3/2}}+C"
+      },
+      {
+        "text": "Combine the fractions over their common denominator.",
+        "math": "I=\\frac{3x(x^2+25)-x^3}{1875(x^2+25)^{3/2}}+C=\\frac{x(2x^2+75)}{1875(x^2+25)^{3/2}}+C"
+      }
+    ]
+  },
+  "ans91": {
+    "method": "Integration by parts twice",
+    "steps": [
+      {
+        "text": "Call the requested integral $I$ and let $J=\\int e^{2x}\\cos(3x)\\,dx$. Integrate $I$ by parts, taking $u=\\sin(3x)$.",
+        "math": "I=\\frac{e^{2x}\\sin(3x)}2-\\frac32J"
+      },
+      {
+        "text": "Integrate $J$ by parts, taking $u=\\cos(3x)$.",
+        "math": "J=\\frac{e^{2x}\\cos(3x)}2+\\frac32I"
+      },
+      {
+        "text": "Substitute for $J$, move the resulting $I$ term to the left, and solve.",
+        "math": "\\frac{13}{4}I=\\frac{e^{2x}\\sin(3x)}2-\\frac{3e^{2x}\\cos(3x)}4,\\qquad I=\\frac{e^{2x}}{13}(2\\sin(3x)-3\\cos(3x))+C"
+      }
+    ]
+  },
+  "ans92": {
+    "method": "Sine substitution",
+    "steps": [
+      {
+        "text": "Use the sine factor as $u$, including its inner derivative.",
+        "math": "u=\\sin(2x),\\qquad du=2\\cos(2x)\\,dx"
+      },
+      {
+        "text": "Integrate the fifth power with the factor $1/2$.",
+        "math": "I=\\frac12\\int u^5\\,du=\\frac{u^6}{12}+C"
+      },
+      {
+        "text": "Substitute back.",
+        "math": "I=\\frac{\\sin^6(2x)}{12}+C"
+      }
+    ]
+  },
+  "ans93": {
+    "method": "Tangent substitution",
+    "steps": [
+      {
+        "text": "Rewrite the reciprocal cosine square as a secant square.",
+        "math": "I=\\int\\tan x\\sec^2x\\,dx"
+      },
+      {
+        "text": "Let $u=\\tan x$, so $du=\\sec^2x\\,dx$.",
+        "math": "I=\\int u\\,du=\\frac{u^2}{2}+C"
+      },
+      {
+        "text": "Substitute back.",
+        "math": "I=\\frac{\\tan^2x}{2}+C"
+      }
+    ]
+  },
+  "ans94": {
+    "method": "Trigonometric substitution",
+    "steps": [
+      {
+        "text": "Use $x=\\tan\\theta$, where $-\\pi/2<\\theta<\\pi/2$. Then $dx=\\sec^2\\theta\\,d\\theta$ and $(x^2+1)^{5/2}=\\sec^5\\theta$.",
+        "math": "I=\\int\\sin^2\\theta\\cos\\theta\\,d\\theta"
+      },
+      {
+        "text": "Set $u=\\sin\\theta$ and integrate the square.",
+        "math": "I=\\int u^2\\,du=\\frac{u^3}{3}+C"
+      },
+      {
+        "text": "Since $u=\\sin\\theta=x/\\sqrt{x^2+1}$, substitute back.",
+        "math": "I=\\frac{x^3}{3(x^2+1)^{3/2}}+C"
+      }
+    ]
+  },
+  "ans95": {
+    "method": "Integration by parts and polynomial division",
+    "steps": [
+      {
+        "text": "Choose $u=\\ln(x+1)$ and $dv=x\\,dx$.",
+        "math": "I=\\frac{x^2}{2}\\ln(x+1)-\\frac12\\int\\frac{x^2}{x+1}\\,dx"
+      },
+      {
+        "text": "Divide the numerator by the denominator.",
+        "math": "\\frac{x^2}{x+1}=x-1+\\frac1{x+1}"
+      },
+      {
+        "text": "Integrate each term. The original logarithm requires $x>-1$.",
+        "math": "I=\\frac{x^2}{2}\\ln(x+1)-\\frac12\\left(\\frac{x^2}{2}-x+\\ln(x+1)\\right)+C"
+      },
+      {
+        "text": "Combine the logarithms and simplify.",
+        "math": "I=\\frac{x^2-1}{2}\\ln(x+1)-\\frac{x^2}{4}+\\frac x2+C"
+      }
+    ]
+  },
+  "ans96": {
+    "method": "Cosine substitution",
+    "steps": [
+      {
+        "text": "Choose the cosine as $u$ and retain the chain-rule factor.",
+        "math": "u=\\cos(3x),\\qquad du=-3\\sin(3x)\\,dx"
+      },
+      {
+        "text": "Integrate the cubic with the factor $-1/3$.",
+        "math": "I=-\\frac13\\int u^3\\,du=-\\frac{u^4}{12}+C"
+      },
+      {
+        "text": "Substitute back.",
+        "math": "I=-\\frac{\\cos^4(3x)}{12}+C"
+      }
+    ]
+  },
+  "ans97": {
+    "method": "Substitution",
+    "steps": [
+      {
+        "text": "Use the radicand as the new variable.",
+        "math": "u=4-x^2,\\qquad du=-2x\\,dx"
+      },
+      {
+        "text": "Rewrite and integrate the negative half-power.",
+        "math": "I=-\\frac12\\int u^{-1/2}\\,du=-\\sqrt u+C"
+      },
+      {
+        "text": "Substitute back on $|x|<2$.",
+        "math": "I=-\\sqrt{4-x^2}+C"
+      }
+    ]
+  },
+  "ans98": {
+    "method": "Radical and trigonometric substitutions",
+    "steps": [
+      {
+        "text": "Let $t=\\sqrt{x^2-9}$, so $dt=x\\,dx/t$ and $x^2=t^2+9$. This avoids choosing a sign for $x$ and works on either interval $|x|>3$.",
+        "math": "I=\\int\\frac{dt}{(t^2+9)^2}"
+      },
+      {
+        "text": "Set $t=3\\tan\\theta$, so $dt=3\\sec^2\\theta\\,d\\theta$.",
+        "math": "I=\\frac1{27}\\int\\cos^2\\theta\\,d\\theta"
+      },
+      {
+        "text": "Use the half-angle identity and integrate.",
+        "math": "I=\\frac{\\theta}{54}+\\frac{\\sin2\\theta}{108}+C"
+      },
+      {
+        "text": "Use $\\theta=\\arctan(t/3)$ and $\\sin2\\theta=6t/(t^2+9)$, then substitute back.",
+        "math": "I=\\frac{t}{18(t^2+9)}+\\frac1{54}\\arctan(t/3)+C=\\frac{\\sqrt{x^2-9}}{18x^2}+\\frac1{54}\\arctan\\left(\\frac{\\sqrt{x^2-9}}3\\right)+C"
+      }
+    ]
+  },
+  "ans99": {
+    "method": "Integration by parts and division",
+    "steps": [
+      {
+        "text": "Choose $u=\\arctan x$ and $dv=x^2\\,dx$.",
+        "math": "I=\\frac{x^3}{3}\\arctan x-\\frac13\\int\\frac{x^3}{1+x^2}\\,dx"
+      },
+      {
+        "text": "Divide the rational expression.",
+        "math": "\\frac{x^3}{1+x^2}=x-\\frac{x}{1+x^2}"
+      },
+      {
+        "text": "The reciprocal term uses $w=1+x^2$, $dw=2x\\,dx$.",
+        "math": "\\int\\frac{x^3}{1+x^2}\\,dx=\\frac{x^2}{2}-\\frac12\\ln(1+x^2)"
+      },
+      {
+        "text": "Substitute into the integration-by-parts equation.",
+        "math": "I=\\frac{x^3}{3}\\arctan x-\\frac{x^2}{6}+\\frac16\\ln(1+x^2)+C"
+      }
+    ]
+  },
+  "ans100": {
+    "method": "Secant substitution",
+    "steps": [
+      {
+        "text": "Save one factor of secant with tangent to form a derivative.",
+        "math": "I=\\int\\sec^4x\\bigl(\\sec x\\tan x\\,dx\\bigr)"
+      },
+      {
+        "text": "Let $u=\\sec x$, so $du=\\sec x\\tan x\\,dx$.",
+        "math": "I=\\int u^4\\,du=\\frac{u^5}{5}+C"
+      },
+      {
+        "text": "Substitute back.",
+        "math": "I=\\frac{\\sec^5x}{5}+C"
+      }
+    ]
+  }
+}

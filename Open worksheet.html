@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Calculus practice · 10 topics, 100 problems</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="worksheet/vendor/katex.min.css">
+  <link rel="stylesheet" href="worksheet/styles.css">
+  <script defer src="worksheet/vendor/katex.min.js"></script>
+  <script defer src="worksheet/problems.js"></script>
+  <script defer src="worksheet/math-preview.js"></script>
+  <script defer src="worksheet/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#questions">Skip to questions</a>
+  <main>
+    <header class="intro">
+      <p class="eyebrow">CALCULUS / PRACTICE WORKSHEET</p>
+      <h1>One integral at a time.</h1>
+      <p class="subtitle" id="worksheet-subtitle">10 course topics · 100 practice problems</p>
+      <p id="worksheet-instructions">Solve each problem, showing your method.</p>
+      <p class="muted">Work at your own pace. Your checkmarks and notes save automatically in this browser.</p>
+      <div class="set-picker">
+        <label for="worksheet-set">Question set</label>
+        <select id="worksheet-set">
+          <option value="course">Course topics · Medium, hard &amp; tricky</option>
+          <option value="original">Original 100 · Previous notes &amp; progress</option>
+        </select>
+      </div>
+    </header>
+    <section class="progress-panel" aria-label="Worksheet progress">
+      <div class="progress-heading">
+        <span id="completion-count" role="status" aria-live="polite">0 of 100 complete</span>
+        <span id="completion-percent" aria-hidden="true">0%</span>
+      </div>
+      <progress id="progress" max="100" value="0" aria-label="Questions completed">0%</progress>
+      <div class="toolbar">
+        <label for="topic-jump" id="topic-jump-label">Topic</label>
+        <select id="topic-jump" aria-label="Jump to a topic"></select>
+        <label for="jump">Jump to</label>
+        <select id="jump" aria-label="Jump to a question"></select>
+        <button id="reset" class="quiet" type="button">Reset progress</button>
+        <button id="undo-reset" class="quiet" type="button" hidden>Undo reset</button>
+      </div>
+      <p id="storage-status" class="save-status" role="status">Saved on this device. Reset clears checkmarks only.</p>
+    </section>
+    <details class="notes-guide">
+      <summary>Writing math in your notes</summary>
+      <p>A line such as <code>a^x</code>, <code>a/b</code>, <code>(n+1)/(n+2)</code>, or <code>x^(n+1)</code> renders as math below your notes. Use parentheses to group a numerator, denominator, or exponent.</p>
+      <p>Mix words and math with dollar signs: <code>Let $u=x^2+3$, then $du=2x dx$.</code> LaTeX works too: <code>\frac{x^2}{2}</code> or <code>$\int x\,dx$</code>. Incomplete expressions stay readable while you type.</p>
+    </details>
+    <p id="load-error" role="alert" hidden></p>
+    <noscript><p class="warning">Enable JavaScript in your browser to use the worksheet.</p></noscript>
+    <div id="questions" tabindex="-1"></div>
+    <footer>Keep practicing. Every completed problem counts.<br><span class="muted" id="worksheet-footer">70 medium · 20 hard · 10 tricky · Worked solutions for every question.</span></footer>
+  </main>
+</body>
+</html>
